@@ -36,7 +36,7 @@ impl Fundraiser {
         self.maker.copy_from_slice(maker.as_ref());
     }
 
-    pub fn mint_to_raise(&self) -> &Address {
+    pub fn _mint_to_raise(&self) -> &Address {
         // unsafe { &*(&self.mint_to_raise as *const [u8; 32] as *const Address ) }
         unsafe { &*(self.mint_to_raise.as_ptr() as *const Address) }
     }

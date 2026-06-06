@@ -10,7 +10,6 @@ mod constants;
 mod test;
 
 use instructions::*;
-use state::*;
 use constants::*;
 
 entrypoint!(process_instruction);
