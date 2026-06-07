@@ -60,6 +60,7 @@ pub fn process_contribute_instruction(accounts: &mut [AccountView], data: &[u8])
     }
     
 
+    
     let current_time = Clock::get()?.unix_timestamp;
     if fundraiser_data.duration >= ((current_time - fundraiser_data.time_started())/SECONDS_TO_DAYS) as u8 {
         return Err(ProgramError::MaxInstructionTraceLengthExceeded);
