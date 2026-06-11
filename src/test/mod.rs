@@ -650,4 +650,18 @@ mod tests {
 
         println!("test_refund passed");
     }
+
+
+
+    #[test]
+    fn test_binary_size() {
+        let path = so_path();
+        let metadata = std::fs::metadata(&path).expect("Failed to get metadata");
+        let size_kb = metadata.len() as f64 / 1024.0;
+        
+        println!("Final Binary Size: {:.2} KB", size_kb);
+        
+        assert!(metadata.len() < 32_768, "Binary is too large for L1 iCache optimization!");
+    }
+
 }
